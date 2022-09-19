@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc.loan";
+
+message LoanResponse {
+  string id =1;
+  string created_at =2;
+  string updated_at =3 ;
+  string product_id =4 ;
+  string attribute_schema_id =5;
+  string attributes =6;
+  string product_loan_id =7;
+}
+
+message LoanRequest {
+  string id =1;
+}
+service LoanService {
+  rpc getLoan(LoanRequest) returns (LoanResponse);
+}
